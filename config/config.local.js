@@ -2,7 +2,7 @@
 'use strict'
 
 /**
- * 本地环境ga
+ * 本地环境
  */
 
 module.exports = app => {
