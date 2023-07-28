@@ -19,8 +19,7 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           password: ${{ secrets.REMOTE_PASS }}
           script: |
-            pwd
-            ls
+            if [ ! -d "egg-node" ]; then mkdir egg-node; fi
             cd /egg-node
             if [ -f package.json ]; then sudo npm run stop; fi
             sudo rm -rf *
