@@ -19,10 +19,11 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           password: ${{ secrets.REMOTE_PASS }}
           script: |
-            pwd
-            ls
-            cd /egg-node
+            if [ ! -d "egg-node" ]; then mkdir egg-node; fi
+            cd egg-node
             if [ -f package.json ]; then sudo npm run stop; fi
+            sudo rm -rf *
+            sudo rm -rf .* 2>/dev/null
             sudo git clone https://github.com/1379255913/test-action.git .
             sudo npm install
             sudo npm run start
