@@ -19,6 +19,8 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           password: ${{ secrets.REMOTE_PASS }}
           script: |
+            pwd
+            ls
             cd /egg-node
             if [ -f package.json ]; then sudo npm run stop; fi
             sudo rm -rf *
